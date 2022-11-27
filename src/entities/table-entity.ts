@@ -2,8 +2,8 @@ export class Entity {
   id: string;
   origem: string;
   destino: string;
-  data: number;
-  hora: number;
+  data: string;
+  hora: string;
   nome: string;
   empresa: string;
   contato: number;

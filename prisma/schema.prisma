@@ -15,8 +15,8 @@ model Table {
 
   origem      String
   destino     String
-  data        Int
-  hora        Int
+  data        String
+  hora        String
   nome        String
   empresa     String
   contato     Int
