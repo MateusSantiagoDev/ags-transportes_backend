@@ -1,14 +1,17 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable } from '@nestjs/common';
+import { createDto } from 'src/dto/create-table.dto';
+import { Entity } from 'src/entities/table-entity';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
-export class TableService {  
-    constructor () {}
+export class TableService {
+  constructor(private readonly prisma: PrismaService) {}
 
-    findAll() {
-        throw new Error("Method not implemented.");
-    }
-    
-    create() {
-        throw new Error("Method not implemented.");
-    }
+  findAll(): Promise<Entity[]> {
+    return this.prisma.table.findMany();
+  }
+
+  create(data: createDto): Promise<Entity> {
+    return this.prisma.table.create({ data });
+  }
 }
