@@ -49,7 +49,7 @@ export class createDto {
   @IsPositive()
   @ApiProperty({
     description: "telefone para contato",
-    example: 1,
+    example: 99999999,
   })
   contato: number;
 
